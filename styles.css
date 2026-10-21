@@ -117,9 +117,11 @@ code{background:var(--fill);border-radius:6px;padding:1px 6px;font-size:13px;ove
 pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--fill);border-radius:12px;padding:10px 12px;font-size:13px;font-family:ui-monospace,'SF Mono',Menlo,monospace}
 details summary{cursor:pointer;font-weight:700;min-height:32px}
 .brows{display:flex;flex-direction:column}
-.brow{flex-direction:row;align-items:center;gap:12px;padding:6px 0;font-size:16px;font-weight:500;color:var(--ink);letter-spacing:0}
+.brow{display:flex;flex-direction:row;align-items:center;gap:12px;padding:6px 0;font-size:16px;font-weight:500;color:var(--ink);letter-spacing:0}
 .brow+.brow{border-top:1px solid var(--line)}
 .brow>span:not(.ico){flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.brow b.muted{font-weight:500;font-size:14px;white-space:nowrap}
+.xdel{min-height:32px;width:32px;padding:0;border-radius:50%;font-size:18px;line-height:1;color:var(--muted)}
 .brow input{width:112px;flex:none;text-align:right;min-height:38px;padding:8px 12px}
 .acc{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 0}
 .acc span{font-weight:600}
