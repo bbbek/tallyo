@@ -1,7 +1,7 @@
 (function(){
 'use strict';
 var TG=(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)?window.Telegram.WebApp:null;
-if(TG){try{TG.ready();TG.expand();}catch(e){}}
+if(TG){try{TG.ready();TG.expand();if(TG.disableVerticalSwipes)TG.disableVerticalSwipes();}catch(e){}}
 var TG_LINK='https://t.me/thetallyobot';
 var KEY='moi-dengi-v2';
 var CATS={exp:['food','transport','home','comm','health','clothes','study','fun','transfers','other'],inc:['job','family','tin','oin']};
