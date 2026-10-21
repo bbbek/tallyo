@@ -2,7 +2,7 @@
 'use strict';
 var TG=(window.Telegram&&window.Telegram.WebApp&&window.Telegram.WebApp.initData)?window.Telegram.WebApp:null;
 if(TG){try{TG.ready();TG.expand();}catch(e){}}
-var TG_LINK='https://t.me/BOT_USERNAME';
+var TG_LINK='https://t.me/thetallyobot';
 var KEY='moi-dengi-v2';
 var CATS={exp:['food','transport','home','comm','health','clothes','study','fun','transfers','other'],inc:['job','family','tin','oin']};
 var METHODS=['apple_pay','qr','transfer','cash','card','other'];
