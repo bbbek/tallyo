@@ -108,3 +108,16 @@ test('history shows day totals and pages long lists', () => {
   assert.match(h, /−\d/);
   T.ui.q = 'n249'; assert.doesNotMatch(T.opsList(), /more_ops/); T.ui.q = '';
 });
+
+test('broken saved records are dropped, string amounts kept, language survives wipe', () => {
+  const { T } = boot({ lang: 'en', tx: [{ id: 'a', ts: '2026-01-01 10:00', kind: 'exp', amt: '12,5', acc: 'a1', cat: 'food' }, { id: 'b' }, null, { id: 'c', ts: 'bad', amt: 5, acc: 'a1' }] });
+  assert.strictEqual(T.S.tx.length, 1); assert.strictEqual(T.S.tx[0].amt, 12.5); assert.strictEqual(T.S.tx[0].method, 'other');
+  T.ui.armed = 'w'; T.A.wipe({ textContent: '' });
+  assert.strictEqual(T.S.lang, 'en'); assert.strictEqual(T.S.tx.length, 0);
+});
+
+test('unknown payment method in pasted text becomes other', () => {
+  const { T } = boot();
+  assert.strictEqual(T.parseLine('2026-03-04 12:30;-15;bitcoin;Tea').method, 'other');
+  assert.strictEqual(T.parseLine('2026-03-04 12:30;-15;qr;Tea').method, 'qr');
+});
