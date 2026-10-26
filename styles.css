@@ -151,3 +151,11 @@ details summary{cursor:pointer;font-weight:700;min-height:32px}
   @keyframes pop{from{transform:translate(-50%,12px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
 }
 @media (min-width:520px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.fc{display:flex;gap:8px;margin-top:12px}
+.fc>div{flex:1;min-width:0;background:var(--fill);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:2px}
+.fc small{font-size:11px!important;font-weight:600;text-transform:uppercase;letter-spacing:.02em;line-height:1.2}
+.fc b{font-size:16px;font-weight:700}.fc b.neg{color:var(--exp)}.fc b.pos{color:var(--inc)}
+.day{display:flex;justify-content:space-between;gap:10px}
+.dpick{flex:1;min-width:130px;min-height:36px;padding:4px 12px;border-radius:999px;font-size:15px}
+.dpick.on{outline:2px solid var(--accent)}
+button.more{width:100%;margin-top:8px}

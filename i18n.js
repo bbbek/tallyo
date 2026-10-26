@@ -8,7 +8,7 @@ added:'Добавлено',dup:'Такая операция уже есть',nee
 limit_m:'Лимит расходов в месяц',left:'Осталось',over:'Превышено на',no_ops:'Пока нет операций. Нажмите «+» внизу.',no_exp:'Нет расходов за этот месяц.',recent:'Последние',
 by_cat:'Расходы по категориям',by_day:'Расходы по дням',compare:'Сравнение с прошлым месяцем',top_notes:'Частые траты',accounts:'Счета',this_m:'Этот месяц',prev_m:'Прошлый',
 add_account:'Добавить счёт',name:'Название',currency:'Валюта',opening:'Начальный остаток',budgets:'Бюджеты по категориям',budget_hint:'Лимит на месяц в основной валюте. Пусто — без лимита.',
-recurring:'Повторяющиеся платежи',add_rec:'Добавить платёж',day_m:'День месяца (1–28)',goals:'Цели накоплений',add_goal:'Добавить цель',target:'Цель',saved:'Накоплено',add_saved:'Пополнить',
+recurring:'Повторяющиеся платежи',add_rec:'Добавить платёж',day_m:'День месяца (1–31)',goals:'Цели накоплений',add_goal:'Добавить цель',target:'Цель',saved:'Накоплено',add_saved:'Пополнить',
 rates:'Курсы валют',rates_hint:'Сколько сомов стоит одна единица валюты. Нужно только для общих итогов, укажите свой курс.',missing_rate:'Не указан курс для некоторых счетов: эти операции не входят в итоги.',
 rules:'Правила категорий',rules_hint:'Строка: слово из названия = код категории (food, transport, home, comm, health, clothes, study, fun, transfers, other).',
 language:'Язык',theme:'Тема',th_auto:'Как в системе',th_light:'Светлая',th_dark:'Тёмная',
@@ -22,7 +22,7 @@ disclaimer:'Не финансовая рекомендация. Перевод �
 months:['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
 m_apple_pay:'Apple Pay',m_qr:'QR',m_transfer:'Перевод',m_cash:'Наличные',m_card:'Карта',m_other:'Другое',
 food:'Еда',transport:'Транспорт',home:'Дом',comm:'Связь',health:'Здоровье и зал',clothes:'Одежда',study:'Учёба',fun:'Развлечения',transfers:'Переводы',other:'Другое',job:'Подработка',family:'Помощь семьи',tin:'Перевод',oin:'Другое',
-cash:'Наличные',mon:'мес.',empty_goal:'Целей пока нет.',empty_rec:'Повторяющихся платежей нет.',kind:'Тип',budget_over:'Лимит превышен',to_acc:'→'
+cash:'Наличные',mon:'мес.',empty_goal:'Целей пока нет.',empty_rec:'Повторяющихся платежей нет.',kind:'Тип',budget_over:'Лимит превышен',today:'Сегодня',yesterday:'Вчера',per_day:'В среднем',forecast:'Прогноз',can_spend:'Можно в день',show_more:'Показать ещё',csv_file:'Скачать CSV для Excel',repeat:'Повторить сегодня',to_acc:'→'
 },
 ky:{
 tg_cloud:'Telegram булутундагы көчүрмө',tg_save:'Булутка сактоо',tg_load:'Булуттан калыбына келтирүү',tg_saved:'Көчүрмө Telegram булутуна сакталды',tg_none:'Булутта көчүрмө жок',tg_failed:'Telegram булуту жеткиликсиз',tg_sure:'Дагы бир жолу басыңыз: азыркы маалымат алмашат',tg_note:'Көчүрмө Telegram серверлеринде аккаунтуңузда сакталат. Макул болсоңуз гана басыңыз.',sc_tg:'Telegram\'да тез киргизүү startapp параметри бар шилтеме менен ачылат: qr-350 (350 сомго QR), tr-350 (чыгуучу которуу), ti-350 (кирүүчү которуу).',learned:'Эстелген дүкөндөр',learned_hint:'Дүкөн үчүн категория тандасаңыз же жазуудан өзгөртсөңүз, Tallyo аны эстеп калат.',learned_none:'Азырынча эч нерсе эстелген жок.',learned_ok:'Эстедим: {n} → {c}',learned_more:' · дагы жаңырды: {k}',app:'Tallyo',new_entry:'Жаңы жазуу',cats_title:'Категориялар',tab_today:'Бүгүн',tab_ops:'Операциялар',tab_rep:'Отчёттор',tab_more:'Дагы',
@@ -33,7 +33,7 @@ added:'Кошулду',dup:'Мындай операция бар',need_amt:'Нө
 limit_m:'Айлык чыгаша лимити',left:'Калды',over:'Ашты',no_ops:'Операциялар жок. Төмөндөгү «+» баскычын басыңыз.',no_exp:'Бул айда чыгашалар жок.',recent:'Акыркылар',
 by_cat:'Категория боюнча чыгашалар',by_day:'Күн боюнча чыгашалар',compare:'Өткөн ай менен салыштыруу',top_notes:'Көп чыгашалар',accounts:'Эсептер',this_m:'Бул ай',prev_m:'Өткөн',
 add_account:'Эсеп кошуу',name:'Аталышы',currency:'Валюта',opening:'Баштапкы калдык',budgets:'Категория боюнча бюджеттер',budget_hint:'Негизги валютадагы айлык лимит. Бош болсо — лимитсиз.',
-recurring:'Кайталануучу төлөмдөр',add_rec:'Төлөм кошуу',day_m:'Айдын күнү (1–28)',goals:'Топтоо максаттары',add_goal:'Максат кошуу',target:'Максат',saved:'Топтолду',add_saved:'Толуктоо',
+recurring:'Кайталануучу төлөмдөр',add_rec:'Төлөм кошуу',day_m:'Айдын күнү (1–31)',goals:'Топтоо максаттары',add_goal:'Максат кошуу',target:'Максат',saved:'Топтолду',add_saved:'Толуктоо',
 rates:'Валюта курстары',rates_hint:'Бир валюта бирдиги канча сом турат. Жалпы жыйынтык үчүн гана керек, өз курсуңузду жазыңыз.',missing_rate:'Айрым эсептер үчүн курс жок: ал операциялар жыйынтыкка кирген жок.',
 rules:'Категория эрежелери',rules_hint:'Сап: аталыштагы сөз = категория коду (food, transport, home, comm, health, clothes, study, fun, transfers, other).',
 language:'Тил',theme:'Тема',th_auto:'Системадай',th_light:'Жарык',th_dark:'Караңгы',
@@ -47,7 +47,7 @@ disclaimer:'Каржылык кеңеш эмес. Кыргызча которм�
 months:['Үчтүн айы','Бирдин айы','Жалган куран','Чын куран','Бугу','Кулжа','Теке','Баш оона','Аяк оона','Тогуздун айы','Жетинин айы','Бештин айы'],
 m_apple_pay:'Apple Pay',m_qr:'QR',m_transfer:'Которуу',m_cash:'Нак акча',m_card:'Карта',m_other:'Башка',
 food:'Тамак-аш',transport:'Транспорт',home:'Үй',comm:'Байланыш',health:'Ден соолук жана спорт',clothes:'Кийим',study:'Окуу',fun:'Көңүл ачуу',transfers:'Которуулар',other:'Башка',job:'Кошумча иш',family:'Үй-бүлөдөн жардам',tin:'Которуу',oin:'Башка',
-cash:'Нак акча',mon:'ай',empty_goal:'Максаттар жок.',empty_rec:'Кайталануучу төлөмдөр жок.',kind:'Түрү',budget_over:'Лимит ашты',to_acc:'→'
+cash:'Нак акча',mon:'ай',empty_goal:'Максаттар жок.',empty_rec:'Кайталануучу төлөмдөр жок.',kind:'Түрү',budget_over:'Лимит ашты',today:'Бүгүн',yesterday:'Кечээ',per_day:'Орточо',forecast:'Болжол',can_spend:'Күнүнө болот',show_more:'Дагы көрсөтүү',csv_file:'Excel үчүн CSV жүктөө',repeat:'Бүгүн кайталоо',to_acc:'→'
 },
 en:{
 tg_cloud:'Telegram cloud backup',tg_save:'Save to cloud',tg_load:'Restore from cloud',tg_saved:'Backup saved to Telegram cloud',tg_none:'No backup in the cloud',tg_failed:'Telegram cloud is unavailable',tg_sure:'Tap again: current data will be replaced',tg_note:'The backup is stored on Telegram servers in your account. Use it only if you agree.',sc_tg:'In Telegram, quick entry opens with a startapp link: qr-350 (QR for 350), tr-350 (outgoing transfer), ti-350 (incoming transfer).',learned:'Remembered merchants',learned_hint:'When you pick a category for a merchant or change it on an entry, Tallyo remembers it for new entries. Saved entries stay as they are.',learned_none:'Nothing remembered yet.',learned_ok:'Remembered: {n} → {c}',learned_more:' · {k} more updated',app:'Tallyo',new_entry:'New entry',cats_title:'Categories',tab_today:'Today',tab_ops:'History',tab_rep:'Reports',tab_more:'More',
@@ -58,7 +58,7 @@ added:'Added',dup:'This entry already exists',need_amt:'Enter an amount above ze
 limit_m:'Monthly spending limit',left:'Left',over:'Over by',no_ops:'No entries yet. Tap + below to add one.',no_exp:'No expenses this month.',recent:'Recent',
 by_cat:'Expenses by category',by_day:'Expenses by day',compare:'Compared with last month',top_notes:'Frequent spending',accounts:'Accounts',this_m:'This month',prev_m:'Last',
 add_account:'Add account',name:'Name',currency:'Currency',opening:'Opening balance',budgets:'Category budgets',budget_hint:'Monthly limit in the main currency. Empty means no limit.',
-recurring:'Recurring payments',add_rec:'Add payment',day_m:'Day of month (1–28)',goals:'Savings goals',add_goal:'Add goal',target:'Target',saved:'Saved',add_saved:'Add',
+recurring:'Recurring payments',add_rec:'Add payment',day_m:'Day of month (1–31)',goals:'Savings goals',add_goal:'Add goal',target:'Target',saved:'Saved',add_saved:'Add',
 rates:'Exchange rates',rates_hint:'How many som one unit of the currency costs. Used only for totals, enter your own rate.',missing_rate:'Some accounts have no rate set: those entries are left out of totals.',
 rules:'Category rules',rules_hint:'Line: word in the note = category code (food, transport, home, comm, health, clothes, study, fun, transfers, other).',
 language:'Language',theme:'Theme',th_auto:'System',th_light:'Light',th_dark:'Dark',
@@ -72,5 +72,5 @@ disclaimer:'Not financial advice. The Kyrgyz translation was made with AI, corre
 months:['January','February','March','April','May','June','July','August','September','October','November','December'],
 m_apple_pay:'Apple Pay',m_qr:'QR',m_transfer:'Transfer',m_cash:'Cash',m_card:'Card',m_other:'Other',
 food:'Food',transport:'Transport',home:'Home',comm:'Phone and internet',health:'Health and gym',clothes:'Clothes',study:'Study',fun:'Fun',transfers:'Transfers',other:'Other',job:'Side income',family:'Family support',tin:'Transfer in',oin:'Other',
-cash:'Cash',mon:'mo.',empty_goal:'No goals yet.',empty_rec:'No recurring payments.',kind:'Type',budget_over:'Limit exceeded',to_acc:'→'
+cash:'Cash',mon:'mo.',empty_goal:'No goals yet.',empty_rec:'No recurring payments.',kind:'Type',budget_over:'Limit exceeded',today:'Today',yesterday:'Yesterday',per_day:'Per day',forecast:'Forecast',can_spend:'Left per day',show_more:'Show more',csv_file:'Download CSV for Excel',repeat:'Repeat today',to_acc:'→'
 }};
