@@ -6,6 +6,8 @@ var TG_LINK='https://t.me/thetallyobot';
 var KEY='moi-dengi-v2';
 var CATS={exp:['food','transport','home','comm','health','clothes','study','fun','transfers','other'],inc:['job','family','tin','oin']};
 var METHODS=['apple_pay','qr','transfer','cash','card','other'];
+// Заметки, которые ставят быстрые команды: это не магазин, запоминать их нельзя.
+var GENERIC={'qr':1,'перевод':1};
 var CURS=['KGS','USD','EUR','RUB','KZT'];
 var CM={
 food:['#ff9500','<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M16 21V3c-2 1.5-3 4-3 7h3"/>'],
@@ -43,6 +45,7 @@ function load(){var d=defaults();
   if(!Array.isArray(d.tx))d.tx=[];if(!Array.isArray(d.accounts)||!d.accounts.length)d.accounts=defaults().accounts;
   if(!Array.isArray(d.rec))d.rec=[];if(!Array.isArray(d.goals))d.goals=[];
   if(!d.rates||typeof d.rates!=='object')d.rates=defaults().rates;if(!d.budgets||typeof d.budgets!=='object')d.budgets={};if(!d.used||typeof d.used!=='object')d.used={};if(!d.learn||typeof d.learn!=='object')d.learn={};
+  Object.keys(GENERIC).forEach(function(k){delete d.learn[k];});
   return d;}
 var S=load();
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
@@ -59,11 +62,12 @@ function accNameById(id){return accName(accById(id));}
 function accCur(id){var a=accById(id);return a?a.cur:S.base;}
 function toBase(v,c){if(c===S.base)return v;var r=Number(S.rates[c]);return r>0?v*r:null;}
 function nkey(note){return String(note||'').toLowerCase().replace(/\s+/g,' ').trim();}
-function learned(note,kind){var n=nkey(note),list=CATS[kind==='inc'?'inc':'exp'];if(n.length<2)return '';
+function learned(note,kind){var n=nkey(note),list=CATS[kind==='inc'?'inc':'exp'];if(n.length<2||GENERIC[n])return '';
   if(S.learn[n]&&list.indexOf(S.learn[n])>=0)return S.learn[n];
   var best='',bl=0;Object.keys(S.learn).forEach(function(k){if(k.length>=3&&k.length>bl&&n.indexOf(k)>=0&&list.indexOf(S.learn[k])>=0){best=S.learn[k];bl=k.length;}});return best;}
-function learn(note,kind,cat){var n=nkey(note);if(n.length<2||kind==='tr'||CATS[kind==='inc'?'inc':'exp'].indexOf(cat)<0)return 0;
-  var was=S.learn[n];S.learn[n]=cat;var k=0;S.tx.forEach(function(x){if(x.kind===kind&&nkey(x.note)===n&&x.cat!==cat&&(x.cat==='other'||x.cat==='oin')){x.cat=cat;k++;}});return was===cat&&!k?0:k+1;}
+// Запоминает магазин только для будущих записей; уже сохранённые записи не трогает.
+function learn(note,kind,cat){var n=nkey(note);if(n.length<2||GENERIC[n]||kind==='tr'||CATS[kind==='inc'?'inc':'exp'].indexOf(cat)<0)return 0;
+  var was=S.learn[n];S.learn[n]=cat;return was===cat?0:1;}
 function autoCat(note,kind){var l=learned(note,kind);if(l)return l;if(kind==='inc')return 'oin';var n=String(note||'').toLowerCase(),ls=String(S.rules||'').split('\n');
   for(var i=0;i<ls.length;i++){var p=ls[i].split('=');if(p.length<2)continue;var k=p[0].trim().toLowerCase(),c=p.slice(1).join('=').trim();if(k&&n.indexOf(k)>=0&&CATS.exp.indexOf(c)>=0)return c;}return 'other';}
 function byTsDesc(a,b){return a.ts<b.ts?1:(a.ts>b.ts?-1:0);}
